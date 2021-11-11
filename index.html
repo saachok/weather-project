@@ -1,54 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div class="tab">
-            <button class="tablinks" onclick="showWeekday(event, 'Monday')">Monday</button>
-            <button class="tablinks" onclick="showWeekday(event, 'Tuesday')">Tuesday</button>
-            <button class="tablinks" onclick="showWeekday(event, 'Wednesday')">Wednesday</button>
-            <button class="tablinks" onclick="showWeekday(event, 'Thursday')">Thursday</button>
-            <button class="tablinks" onclick="showWeekday(event, 'Friday')">Friday</button>
-            <button class="tablinks" onclick="showWeekday(event, 'Saturday')">Saturday</button>
-            <button class="tablinks" onclick="showWeekday(event, 'Sunday')">Sunday</button>
-        </div>
 
-        <div id="Monday" class="tabcontent">
-            <h3>Monday</h3>
-            <p>It's Monday.</p>
-        </div>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-        <div id="Tuesday" class="tabcontent">
-            <h3>Tuesday</h3>
-            <p>It's Tuesday.</p>
-        </div>
+<body>
+    <div class="tab">
+        <button class="tablinks" onclick="showWeekday(event, 'Ternivka')">Ternivka</button>
+        <button class="tablinks" onclick="showWeekday(event, 'Pavlograd')">Pavlograd</button>
+        <button class="tablinks" onclick="showWeekday(event, 'Dnipro')">Dnipro</button>
+    </div>
 
-        <div id="Wednesday" class="tabcontent">
-            <h3>Wednesday</h3>
-            <p>It's Wednesday my dudes.</p>
-        </div>
+    <div id="Ternivka" class="tabcontent">
+        <h3>Ternivka</h3>
+        <p>It's Ternivka.</p>
+    </div>
 
-        <div id="Thursday" class="tabcontent">
-            <h3>Thursday</h3>
-            <p>It's Thursday.</p>
-        </div>
+    <div id="Pavlograd" class="tabcontent">
+        <h3>Pavlograd</h3>
+        <p>It's Pavlograd.</p>
+    </div>
 
-        <div id="Friday" class="tabcontent">
-            <h3>Friday</h3>
-            <p>It's Friday.</p>
-        </div>
+    <div id="Dnipro" class="tabcontent">
+        <h3>Dnipro</h3>
+        <p>It's Dnipro.</p>
+    </div>
 
-        <div id="Saturday" class="tabcontent">
-            <h3>Saturday</h3>
-            <p>It's Saturday.</p>
-        </div>
+    <script src="main.js"></script>
+</body>
 
-        <div id="Sunday" class="tabcontent">
-            <h3>Sunday</h3>
-            <p>It's Sunday.</p>
-        </div>
-
-        <script src="main.js"></script>
-    </body>
 </html>

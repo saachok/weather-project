@@ -1,12 +1,13 @@
 .tab {
+    display: flex;
+    justify-content: center;
     overflow: hidden;
     border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    background-color: #a0ffad;
 }
 
 .tab button {
     background-color: inherit;
-    float: left;
     border: none;
     outline: none;
     cursor: pointer;
@@ -15,11 +16,11 @@
 }
 
 .tab button:hover {
-    background-color: #ddd;
+    background-color: #61da71;
 }
 
 .tab button.active {
-    background-color: #ccc;
+    background-color: #43c754;
 }
 
 .tabcontent {
@@ -27,10 +28,11 @@
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+    background-color: #d0ffd6;
     animation: fadeEffect 1s;
 }
 
-@keyframes fadeEffect {
+/* @keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
-}
+} */
