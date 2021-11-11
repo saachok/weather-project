@@ -73,6 +73,12 @@ const getWeatherData = (base) => {
 }
 
 const getCordinatesAndShowWeather = () => {
+
+  const longPavlograd = 35.866667;
+  const latPavlograd = 48.516667;
+  const longDnipro = 34.983334;
+  const latDnipro = 48.450001;
+
   let long;
   let lat;
   // Accessing Geolocation of User
