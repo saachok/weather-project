@@ -2,12 +2,6 @@ function showCity(evt, CityName) {
   // Declare all variables
   var i, tabcontent, tablinks;
 
-  // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-
   // Get all elements with class="tablinks" and remove the class "active"
   tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
@@ -15,8 +9,9 @@ function showCity(evt, CityName) {
   }
 
   // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(CityName).style.display = "block";
+  // document.getElementById(CityName).style.display = "block";
   evt.currentTarget.className += " active";
+  showWeather(CityName);
 }
 
 const api = '0f439455f87b7694c081f3e1754f42a0';
@@ -29,7 +24,9 @@ const desc = document.querySelector('.desc');
 const sunriseDOM = document.querySelector('.sunrise');
 const sunsetDOM = document.querySelector('.sunset');
 
-const updateHTMLWeatherInfo = ({ iconUrl, place, description, temp, fahrenheit, sunriseGMT, sunsetGMT }) => {
+const container = document.querySelector('.container');
+
+const updateHTMLWeatherInfo = ({ iconUrl, place, description, temp, fahrenheit, sunriseGMT, sunsetGMT, backgroundImage }) => {
   // Interacting with DOM to show data
   iconImg.src = iconUrl;
   loc.textContent = `${place}`;
@@ -38,6 +35,8 @@ const updateHTMLWeatherInfo = ({ iconUrl, place, description, temp, fahrenheit, 
   tempF.textContent = `${fahrenheit.toFixed(2)} °F`;
   sunriseDOM.textContent = `${sunriseGMT.toLocaleDateString()}, ${sunriseGMT.toLocaleTimeString()}`;
   sunsetDOM.textContent = `${sunsetGMT.toLocaleDateString()}, ${sunsetGMT.toLocaleTimeString()}`;
+
+  container.style.background = `url(${backgroundImage})`;
 }
 
 const convertToFahrenheit = (temp) => {
@@ -48,50 +47,83 @@ const convertEpochTimeToGMT = (timestamp) => {
   return new Date(timestamp * 1000);
 }
 
-const getWeatherData = (base) => {
-  // Using fetch to get data
-  fetch(base)
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      console.log("Fetched data", data);
-      const { temp } = data.main;
-      const place = data.name;
-      const { description, icon } = data.weather[0];
-      const { sunrise, sunset } = data.sys;
-
-      const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
-      const fahrenheit = convertToFahrenheit(temp);
-
-      // Converting Epoch(Unix) time to GMT
-      const sunriseGMT = convertEpochTimeToGMT(sunrise);
-      const sunsetGMT = convertEpochTimeToGMT(sunset);
-
-      updateHTMLWeatherInfo({ iconUrl, place, description, temp, fahrenheit, sunriseGMT, sunsetGMT });
-    });
+const getWeatherData = async (base) => {
+  const response = await fetch(base)
+  return response.json();
 }
 
-const getCordinatesAndShowWeather = () => {
+const prepareCityConfig = async (cityName) => {
+  const base = getWeatherURL(cityName);
+  const data = await getWeatherData(base);
 
-  const longPavlograd = 35.866667;
-  const latPavlograd = 48.516667;
-  const longDnipro = 34.983334;
-  const latDnipro = 48.450001;
+  console.log("Fetched data", data);
+  const { temp } = data.main;
+  const place = data.name;
+  const { description, icon } = data.weather[0];
+  const { sunrise, sunset } = data.sys;
 
-  let long;
-  let lat;
-  // Accessing Geolocation of User
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition((position) => {
-      // Storing Longitude and Latitude in variables
-      long = position.coords.longitude;
-      lat = position.coords.latitude;
+  const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+  const fahrenheit = convertToFahrenheit(temp);
 
-      const base = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${api}&units=metric`;
-      getWeatherData(base);
-    });
+  // Converting Epoch(Unix) time to GMT
+  const sunriseGMT = convertEpochTimeToGMT(sunrise);
+  const sunsetGMT = convertEpochTimeToGMT(sunset);
+
+  const backgroundImage = cities[cityName].backgroundImage;
+
+
+  return {
+    temp: temp,
+    place: place,
+    description: description,
+    iconUrl: iconUrl,
+    sunriseGMT: sunriseGMT,
+    sunsetGMT: sunsetGMT,
+    fahrenheit: fahrenheit,
+    backgroundImage: backgroundImage
   }
 }
 
-window.addEventListener('load', getCordinatesAndShowWeather);
+const cities = {
+  "Ternivka": {
+    lat: 48.51779890,
+    long: 36.07869000,
+    backgroundImage: "https://oblrada.dp.gov.ua/wp-content/uploads/2016/08/ternovka.jpg"
+  },
+  "Pavlohrad": {
+    lat: 48.516667,
+    long: 35.866667,
+    backgroundImage: "black"
+  },
+  "Dnipro": {
+    lat: 48.450001,
+    long: 34.983334,
+    backgroundImage: "pink"
+  },
+  "Lviv": {
+    lat: 49.842957,
+    long: 24.031111,
+    backgroundImage: "purple"
+  },
+  "Kyiv": {
+    lat: 50.4546600,
+    long: 30.5238000,
+    backgroundImage: "yellow"
+  },
+  "Odesa": {
+    lat: 46.482952,
+    long: 30.712481,
+    backgroundImage: "white"
+  }
+}
+
+const getWeatherURL = (cityName) => {
+  const cityConfig = cities[cityName];
+  return `https://api.openweathermap.org/data/2.5/weather?lat=${cityConfig.lat}&lon=${cityConfig.long}&appid=${api}&units=metric`;
+}
+
+const showWeather = async (city) => {
+  const cityConfig = await prepareCityConfig(city);
+  console.log(cityConfig);
+  updateHTMLWeatherInfo(cityConfig);
+}
