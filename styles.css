@@ -1,7 +1,6 @@
 * {
     padding: 0;
     margin: 0;
-    
 }
 
 body {
@@ -50,6 +49,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-repeat: no-repeat;
     /* background: radial-gradient(
         circle,
         rgba(37, 221, 31, 0.658) 0%,
