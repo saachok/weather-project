@@ -49,14 +49,27 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
     /* background: radial-gradient(
         circle,
         rgba(37, 221, 31, 0.658) 0%,
         rgba(97, 224, 66, 0.841) 35%,
         #a0ffad 100%
     ); */
+}
+
+.containerContent {
+    padding: 20px;
+    min-width: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.726);
+    border-radius: 50px;
 }
 
 .weather {
