@@ -110,25 +110,25 @@ const cities = [ // {a: 1}, {}, {}
     name: "Lviv",
     lat: 49.842957,
     long: 24.031111,
-    backgroundImage: "https://cdnp.flypgs.com/files/Sehirler-long-tail/Lviv/lviv-sehir-meydan.jpg",
+    backgroundImage: "https://deih43ym53wif.cloudfront.net/lviv-ukraine-shutterstock_231990358-2_996b60addc.jpeg",
   },
   {
     name: "Kyiv",
     lat: 50.4546600,
     long: 30.5238000,
-    backgroundImage: "https://cdn.britannica.com/19/194819-050-BED53A4E/Maidan-Nezalezhnosti-Kiev-Ukraine.jpg"
+    backgroundImage: "https://www.atptour.com/en/tournaments/kyiv/9558/-/media/images/atp-tournaments/tournament-images/kyiv-2021-venue.jpg"
   },
   {
     name: "Odesa",
     lat: 46.482952,
     long: 30.712481,
-    backgroundImage: "https://www.gmfus.org/sites/default/files/styles/watermark/public/2021-08/shutterstock_1095160991.jpg?itok=ucerHq92"
+    backgroundImage: "https://prawwwda.com/images/prawda/milana/2021/obsheje/odessa_0.jpg"
   },
   {
     name: "Berlin",
     lat: 52.520008,
     long: 13.404954,
-    backgroundImage: "https://vsitury.com.ua/uploads/182/54049/1.jpg"
+    backgroundImage: "https://planetofhotels.com/guide/sites/default/files/styles/paragraph__live_banner__lb_image__1880bp/public/live_banner/berlin.jpg"
   },
   {
     name: "Rome",
@@ -140,19 +140,19 @@ const cities = [ // {a: 1}, {}, {}
     name: "Amsterdam",
     lat: 52.379189,
     long: 4.899431,
-    backgroundImage: "https://s9.travelask.ru/uploads/post/000/024/888/main_image/facebook-260d1e861e913e605f741673cf80b08f.jpg"
+    backgroundImage: "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iwcknWNa0.9c/v1/-1x-1.jpg"
   },
   {
     name: "Prague",
     lat: 50.073658,
     long: 14.418540,
-    backgroundImage: "https://micedata.s3.eu-central-1.amazonaws.com/MiceProjectData/Images/2020/3/31/135_821_6bdfbd01-dc37-4900-a663-bd7663cdabb1.jpg"
+    backgroundImage: "https://670379-2197025-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2019/12/Safestay-Prague-Mustek-1.jpg"
   },
   {
     name: "Warsaw",
     lat: 52.237049,
     long: 21.017532,
-    backgroundImage: "https://travellgide.ru/wp-content/uploads/2019/05/1254899_xl-800x445.jpg"
+    backgroundImage: "https://travelermaster.com/wp-content/uploads/2021/09/elijah-g-oOHHxQ65dFE-unsplash.jpg"
   },
   {
     name: "New York",
@@ -164,19 +164,19 @@ const cities = [ // {a: 1}, {}, {}
     name: "Mexico City",
     lat: 19.432608,
     long: -99.133209,
-    backgroundImage: "https://www.roadaffair.com/wp-content/uploads/2020/11/cathedral-zocalo-square-mexico-city-shutterstock_1323912815.jpg"
+    backgroundImage: "https://www.travels-mexico.com/wp-content/uploads/mexico-city.jpeg"
   },
   {
     name: "Tokyo",
     lat: 35.652832,
     long: 139.839478,
-    backgroundImage: "https://www.agoda.com/wp-content/uploads/2019/01/Tokyo-travel-tips_city-guides_Tokyo_Japan_people-at-shibuya-crossing.jpg"
+    backgroundImage: "https://cms.finnair.com/resource/blob/720604/0511bb2bc91953d4ef3506d00933819b/tokyo-main-data.jpg"
   },
   {
     name: "Sydney",
     lat: -33.865143,
     long: 151.209900,
-    backgroundImage: "https://www.wallpapers13.com/wp-content/uploads/2016/07/Sydney-Australia-Opera-House-HD-Wallpaper-Download-for-mobile.jpg"
+    backgroundImage: "https://homeiswhereyourbagis.com/wp-content/uploads/2019/11/Sydney-Opera-und-CBD-Skyline.jpg"
   },
 ];
 
