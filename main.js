@@ -36,7 +36,7 @@ const updateHTMLWeatherInfo = ({ iconUrl, place, description, temp, fahrenheit, 
   sunriseDOM.textContent = `${sunriseGMT.toLocaleDateString()}, ${sunriseGMT.toLocaleTimeString()}`;
   sunsetDOM.textContent = `${sunsetGMT.toLocaleDateString()}, ${sunsetGMT.toLocaleTimeString()}`;
 
-  container.style.background = `url(${backgroundImage})`;
+  container.style.backgroundImage = `url(${backgroundImage})`;
 }
 
 const convertToFahrenheit = (temp) => {
@@ -82,84 +82,98 @@ const prepareCityConfig = async (cityName) => {
   }
 }
 
-const cities = {
-  "Ternivka": {
+const citiesArray = [
+  {
+    name: "Ternivka",
     lat: 48.51779890,
     long: 36.07869000,
-    backgroundImage: "https://oblrada.dp.gov.ua/wp-content/uploads/2016/08/ternovka.jpg"
+    backgroundImage: "https://i.ytimg.com/vi/u8sehjoAx5Y/maxresdefault.jpg"
   },
-  "Pavlohrad": {
+  {
+    name: "Pavlohrad",
     lat: 48.516667,
     long: 35.866667,
-    backgroundImage: "https://www.shans-centr.com.ua/wp-content/uploads/2019/10/pavlograd.jpg"
+    backgroundImage: "https://pavlogradmrada.dp.gov.ua/wp-content/uploads/2019/03/111-1.jpg"
   },
-  "Dnipro": {
+  {
+    name: "Dnipro",
     lat: 48.450001,
     long: 34.983334,
-    backgroundImage: "https://udhtu.edu.ua/wp-content/uploads/2018/05/dnepr2.jpg"
+    backgroundImage: "https://i.obozrevatel.com/news/2021/2/1/gettyimages-1084645228.jpg?size=1944x924"
   },
-  "Lviv": {
+  {
+    name: "Lviv",
     lat: 49.842957,
     long: 24.031111,
     backgroundImage: "https://cdnp.flypgs.com/files/Sehirler-long-tail/Lviv/lviv-sehir-meydan.jpg"
   },
-  "Kyiv": {
+  {
+    name: "Kyiv",
     lat: 50.4546600,
     long: 30.5238000,
     backgroundImage: "https://cdn.britannica.com/19/194819-050-BED53A4E/Maidan-Nezalezhnosti-Kiev-Ukraine.jpg"
   },
-  "Odesa": {
+  {
+    name: "Odesa",
     lat: 46.482952,
     long: 30.712481,
     backgroundImage: "https://www.gmfus.org/sites/default/files/styles/watermark/public/2021-08/shutterstock_1095160991.jpg?itok=ucerHq92"
   },
-  "Berlin": {
+  {
+    name: "Berlin",
     lat: 52.520008,
     long: 13.404954,
     backgroundImage: "https://vsitury.com.ua/uploads/182/54049/1.jpg"
   },
-  "Rome": {
+  {
+    name: "Rome",
     lat: 41.902782,
     long: 12.496366,
     backgroundImage: "https://cdn.sweetescape.com/images/cities/rome/cover/757d54f8-06d6-4c19-beef-410d5dfa33a6.jpg"
   },
-  "Amsterdam": {
+  {
+    name: "Amsterdam",
     lat: 52.379189,
     long: 4.899431,
     backgroundImage: "https://s9.travelask.ru/uploads/post/000/024/888/main_image/facebook-260d1e861e913e605f741673cf80b08f.jpg"
   },
-  "Prague": {
+  {
+    name: "Prague",
     lat: 50.073658,
     long: 14.418540,
     backgroundImage: "https://micedata.s3.eu-central-1.amazonaws.com/MiceProjectData/Images/2020/3/31/135_821_6bdfbd01-dc37-4900-a663-bd7663cdabb1.jpg"
   },
-  "Warsaw": {
+  {
+    name: "Warsaw",
     lat: 52.237049,
     long: 21.017532,
     backgroundImage: "https://travellgide.ru/wp-content/uploads/2019/05/1254899_xl-800x445.jpg"
   },
-  "New York": {
+  {
+    name: "New York",
     lat: 43.000000,
     long: -75.000000,
     backgroundImage: "https://lviv.com/wp-content/uploads/2017/11/New_York_NYC.jpg"
   },
-  "Mexico City": {
+  {
+    name: "Mexico City",
     lat: 19.432608,
     long: -99.133209,
     backgroundImage: "https://www.roadaffair.com/wp-content/uploads/2020/11/cathedral-zocalo-square-mexico-city-shutterstock_1323912815.jpg"
   },
-  "Tokyo": {
+  {
+    name: "Tokyo",
     lat: 35.652832,
     long: 139.839478,
     backgroundImage: "https://www.agoda.com/wp-content/uploads/2019/01/Tokyo-travel-tips_city-guides_Tokyo_Japan_people-at-shibuya-crossing.jpg"
   },
-  "Sydney": {
+  {
+    name: "Sydney",
     lat: -33.865143,
     long: 151.209900,
     backgroundImage: "https://www.wallpapers13.com/wp-content/uploads/2016/07/Sydney-Australia-Opera-House-HD-Wallpaper-Download-for-mobile.jpg"
   },
-
-}
+];
 
 const getWeatherURL = (cityName) => {
   const cityConfig = cities[cityName];
@@ -170,3 +184,9 @@ const showWeather = async (city) => {
   const cityConfig = await prepareCityConfig(city);
   updateHTMLWeatherInfo(cityConfig);
 }
+
+const showStartScreen = () => {
+
+};
+
+window.addEventListener("load", showStartScreen);
