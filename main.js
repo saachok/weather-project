@@ -52,6 +52,11 @@ const getWeatherData = async (base) => {
   return response.json();
 }
 
+const getWeatherURL = (cityName) => {
+  const cityConfig = cities.find((element) => { return element.name === cityName });                                                                                                                            // 1
+  return `https://api.openweathermap.org/data/2.5/weather?lat=${cityConfig.lat}&lon=${cityConfig.long}&appid=${api}&units=metric`;
+}
+
 const prepareCityConfig = async (cityName) => {
   const base = getWeatherURL(cityName);
   const data = await getWeatherData(base);
@@ -62,13 +67,13 @@ const prepareCityConfig = async (cityName) => {
   const { sunrise, sunset } = data.sys;
 
   const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
-  const fahrenheit = convertToFahrenheit(temp);
 
-  // Converting Epoch(Unix) time to GMT
+  const fahrenheit = convertToFahrenheit(temp);
   const sunriseGMT = convertEpochTimeToGMT(sunrise);
   const sunsetGMT = convertEpochTimeToGMT(sunset);
 
-  const backgroundImage = cities[cityName].backgroundImage;
+
+  const backgroundImage = cities.find((element) => { return element.name === cityName }).backgroundImage;
 
   return {
     temp: temp,
@@ -82,7 +87,7 @@ const prepareCityConfig = async (cityName) => {
   }
 }
 
-const citiesArray = [
+const cities = [ // {a: 1}, {}, {}
   {
     name: "Ternivka",
     lat: 48.51779890,
@@ -105,7 +110,7 @@ const citiesArray = [
     name: "Lviv",
     lat: 49.842957,
     long: 24.031111,
-    backgroundImage: "https://cdnp.flypgs.com/files/Sehirler-long-tail/Lviv/lviv-sehir-meydan.jpg"
+    backgroundImage: "https://cdnp.flypgs.com/files/Sehirler-long-tail/Lviv/lviv-sehir-meydan.jpg",
   },
   {
     name: "Kyiv",
@@ -174,11 +179,6 @@ const citiesArray = [
     backgroundImage: "https://www.wallpapers13.com/wp-content/uploads/2016/07/Sydney-Australia-Opera-House-HD-Wallpaper-Download-for-mobile.jpg"
   },
 ];
-
-const getWeatherURL = (cityName) => {
-  const cityConfig = cities[cityName];
-  return `https://api.openweathermap.org/data/2.5/weather?lat=${cityConfig.lat}&lon=${cityConfig.long}&appid=${api}&units=metric`;
-}
 
 const showWeather = async (city) => {
   const cityConfig = await prepareCityConfig(city);
