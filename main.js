@@ -104,19 +104,19 @@ const cities = [ // {a: 1}, {}, {}
     name: "Dnipro",
     lat: 48.450001,
     long: 34.983334,
-    backgroundImage: "https://i.obozrevatel.com/news/2021/2/1/gettyimages-1084645228.jpg?size=1944x924"
+    backgroundImage: "https://cdn.theculturetrip.com/wp-content/uploads/2018/02/34711225831_954477fb4c_k.jpg"
   },
   {
     name: "Lviv",
     lat: 49.842957,
     long: 24.031111,
-    backgroundImage: "https://deih43ym53wif.cloudfront.net/lviv-ukraine-shutterstock_231990358-2_996b60addc.jpeg",
+    backgroundImage: "https://wallpapercave.com/wp/wp8910482.jpg",
   },
   {
     name: "Kyiv",
     lat: 50.4546600,
     long: 30.5238000,
-    backgroundImage: "https://www.atptour.com/en/tournaments/kyiv/9558/-/media/images/atp-tournaments/tournament-images/kyiv-2021-venue.jpg"
+    backgroundImage: "https://wallpaperaccess.com/full/1999952.jpg"
   },
   {
     name: "Odesa",
@@ -134,7 +134,7 @@ const cities = [ // {a: 1}, {}, {}
     name: "Rome",
     lat: 41.902782,
     long: 12.496366,
-    backgroundImage: "https://cdn.sweetescape.com/images/cities/rome/cover/757d54f8-06d6-4c19-beef-410d5dfa33a6.jpg"
+    backgroundImage: "https://www.fodors.com/wp-content/uploads/2018/10/HERO_UltimateRome_Hero_shutterstock789412159.jpg"
   },
   {
     name: "Amsterdam",
@@ -158,7 +158,7 @@ const cities = [ // {a: 1}, {}, {}
     name: "New York",
     lat: 43.000000,
     long: -75.000000,
-    backgroundImage: "https://lviv.com/wp-content/uploads/2017/11/New_York_NYC.jpg"
+    backgroundImage: "https://adijuhpalace.ru/800/600/https/worldstrides.com/wp-content/uploads/2015/07/iStock_000040849990_Large.jpg"
   },
   {
     name: "Mexico City",
