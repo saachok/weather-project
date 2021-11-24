@@ -185,8 +185,8 @@ const showWeather = async (city) => {
   updateHTMLWeatherInfo(cityConfig);
 }
 
-const showStartScreen = () => {
-
+const showStartScreen = (evt) => {
+  showWeather("Lviv");
 };
 
 window.addEventListener("load", showStartScreen);
