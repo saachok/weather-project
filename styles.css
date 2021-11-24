@@ -1,9 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Lora', serif;
+    overflow: hidden;
+}
+
 .tab {
+    position: fixed;
+    top: 0;
     display: flex;
     justify-content: center;
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #a0ffad;
+    border: 1px solid rgb(8, 79, 100);
+    border-top: none;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #44d8ec25;
 }
 
 .tab button {
@@ -13,14 +28,15 @@
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
+    font-size: 1rem;
 }
 
 .tab button:hover {
-    background-color: #61da71;
+    background-color: #44d9ec;
 }
 
 .tab button.active {
-    background-color: #43c754;
+    background-color: #44d9ec;
 }
 
 .tabcontent {
@@ -30,6 +46,55 @@
     border-top: none;
     background-color: #d0ffd6;
     animation: fadeEffect 1s;
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.containerContent {
+    padding: 20px;
+    min-width: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.726);
+    border-radius: 50px;
+}
+
+.weather {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 1.5rem;
+}
+
+#location {
+    font-size: 3rem;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.desc {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+
+.circle {
+    background-color: black;
+    border-radius: 50px;
+    height: 15px;
+    width: 15px;
+    margin: 0 15px;
 }
 
 /* @keyframes fadeEffect {

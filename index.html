@@ -2,31 +2,47 @@
 <html>
 
 <head>
+    <title>Weather app</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="tab">
-        <button class="tablinks" onclick="showCity(event, 'Ternivka')">Ternivka</button>
-        <button class="tablinks" onclick="showCity(event, 'Pavlograd')">Pavlograd</button>
-        <button class="tablinks" onclick="showCity(event, 'Dnipro')">Dnipro</button>
+    <div class="container">
+        <nav class="tab">
+            <button class="tablinks" onclick="showCity(event, 'Ternivka')">Ternivka</button>
+            <button class="tablinks" onclick="showCity(event, 'Pavlohrad')">Pavlohrad</button>
+            <button class="tablinks" onclick="showCity(event, 'Dnipro')">Dnipro</button>
+            <button class="tablinks" onclick="showCity(event, 'Lviv')">Lviv</button>
+            <button class="tablinks" onclick="showCity(event, 'Kyiv')">Kyiv</button>
+            <button class="tablinks" onclick="showCity(event, 'Odesa')">Odesa</button>
+            <button class="tablinks" onclick="showCity(event, 'Berlin')">Berlin</button>
+            <button class="tablinks" onclick="showCity(event, 'Rome')">Rome</button>
+            <button class="tablinks" onclick="showCity(event, 'Amsterdam')">Amsterdam</button>
+            <button class="tablinks" onclick="showCity(event, 'Prague')">Prague</button>
+            <button class="tablinks" onclick="showCity(event, 'Warsaw')">Warsaw</button>
+            <button class="tablinks" onclick="showCity(event, 'New York')">New York</button>
+            <button class="tablinks" onclick="showCity(event, 'Mexico City')">Mexico City</button>
+            <button class="tablinks" onclick="showCity(event, 'Tokyo')">Tokyo</button>
+            <button class="tablinks" onclick="showCity(event, 'Sydney')">Sydney</button>
+        </nav>
+        <div class="containerContent">
+            <img src="" alt="" srcset="" id="weather-icon">
+            <div id="location">Unable to Fetch Weather</div>
+            <div class="desc">No Information Available.</div>
+            <div class="weather">
+                <div class="c">Error</div>
+                <div class="circle"></div>
+                <div class="f">Error</div>
+            </div>
+            <div class="info">
+                <h4>Sunrise: <span class="sunrise">No Information Available</span></h4>
+                <h4>Sunset: <span class="sunset">No Information Available</span></h4>
+            </div>
+        </div>
     </div>
-
-    <div id="Ternivka" class="tabcontent">
-        <h3>Ternivka</h3>
-        <p>It's Ternivka.</p>
-    </div>
-
-    <div id="Pavlograd" class="tabcontent">
-        <h3>Pavlograd</h3>
-        <p>It's Pavlograd.</p>
-    </div>
-
-    <div id="Dnipro" class="tabcontent">
-        <h3>Dnipro</h3>
-        <p>It's Dnipro.</p>
-    </div>
-
     <script src="main.js"></script>
 </body>
 
