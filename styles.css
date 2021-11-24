@@ -9,11 +9,13 @@ body {
 }
 
 .tab {
+    position: fixed;
+    top: 0;
     display: flex;
     justify-content: center;
     overflow: hidden;
-    border-bottom: 1px solid rgb(8, 105, 8);
-    background-color: #a0ffad;
+    border-bottom: 1px solid rgb(8, 79, 100);
+    border-radius: 20px;
 }
 
 .tab button {
@@ -26,11 +28,11 @@ body {
 }
 
 .tab button:hover {
-    background-color: #61da71;
+    background-color: #44d9ec;
 }
 
 .tab button.active {
-    background-color: #43c754;
+    background-color: #44d9ec;
 }
 
 .tabcontent {
@@ -52,13 +54,6 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
-    /* background: radial-gradient(
-        circle,
-        rgba(37, 221, 31, 0.658) 0%,
-        rgba(97, 224, 66, 0.841) 35%,
-        #a0ffad 100%
-    ); */
 }
 
 .containerContent {
