@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,600&display=swap');
+
 * {
     padding: 0;
     margin: 0;
 }
 
-body {
+.body-container {
     font-family: 'Lora', serif;
     overflow: hidden;
 }
@@ -49,7 +51,7 @@ body {
     padding: 0;
 }
 
-.container {
+.weather-container {
     height: 100vh;
     display: flex;
     align-items: center;
