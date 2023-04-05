@@ -8,6 +8,7 @@
 .body-container {
     font-family: 'Lora', serif;
     overflow: hidden;
+     background-size: cover;
 }
 
 .tab {
